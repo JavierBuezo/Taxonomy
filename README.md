@@ -1,6 +1,6 @@
 # Taxonomy · Aula botánica
 
-Aplicación de repaso visual de organografía vegetal en español. **v1.0**.
+Aplicación de repaso visual de organografía vegetal en español. **v1.1**.
 
 [Acceso de revisión docente](https://taxonomy-aula-botanica.squarehedge.chatgpt.site). La copia de Sites tiene acceso privado del propietario; no es un enlace público para el alumnado. El código de este repositorio puede alojarse en cualquier servidor estático, incluido GitHub Pages.
 
@@ -14,10 +14,8 @@ Aplicación de repaso visual de organografía vegetal en español. **v1.0**.
 | Anatomía | Tejidos de una hoja dorsiventral | 8 |
 | Anatomía | Tallo primario de eudicotiledónea | 6 |
 | Anatomía | Raíz primaria de eudicotiledónea | 7 |
-| Detalle | Aparato estomático | 4 |
-| Detalle | Semilla madura de judía | 5 |
 
-Son 53 etiquetas. La agrupación sigue los bloques docentes disponibles; no se atribuye una numeración oficial a las prácticas sin sus guiones. Las láminas son esquemas vectoriales originales, ampliables y sin escala; no microfotografías. Las descripciones y notas especifican el tipo anatómico representado.
+Son 44 etiquetas. La agrupación sigue los bloques docentes disponibles; no se atribuye una numeración oficial a las prácticas sin sus guiones. Las láminas son esquemas vectoriales originales, ampliables y sin escala; no microfotografías. Las descripciones y notas especifican el tipo anatómico representado.
 
 ## Uso
 
@@ -47,10 +45,10 @@ Abrir `http://localhost:8000`. Los módulos requieren un servidor HTTP; abrir `i
 ## Organización
 
 - `activities.js`: catálogo, nombres, descripciones y coordenadas de las estructuras.
-- `diagrams.js`: ocho láminas SVG originales.
+- `diagrams.js`: seis láminas SVG originales.
 - `model.js`: colocación, intercambio, corrección, ayuda y validación del progreso.
 - `app.js`, `index.html`, `style.css`: interacción y presentación.
-- `tests/model.test.mjs`: 36 pruebas de lógica, catálogo y persistencia.
+- `tests/model.test.mjs`: 32 pruebas de lógica, catálogo y persistencia.
 - `QA.md`: comprobaciones reales y límites de la validación.
 - `.github/workflows/checks.yml`: comprobaciones automáticas al recibir cambios.
 
@@ -59,3 +57,12 @@ Para añadir una lámina, crear su dibujo y su entrada de catálogo. Las posicio
 ## Referencias de consulta
 
 Conceptos contrastados con *Biology 2e*, OpenStax: [cuerpo vegetal](https://openstax.org/books/biology-2e/pages/30-1-the-plant-body), [tallos](https://openstax.org/books/biology-2e/pages/30-2-stems), [raíces](https://openstax.org/books/biology-2e/pages/30-3-roots), [hojas](https://openstax.org/books/biology-2e/pages/30-4-leaves) y [desarrollo reproductivo](https://openstax.org/books/biology-2e/pages/32-1-reproductive-development-and-structure). No se han copiado las figuras del libro. Los colores propios no equivalen a una tinción histológica.
+
+## Rediseño v1.1
+
+- Se retiran las actividades independientes de semilla y aparato estomático. El estoma permanece como estructura dentro del corte de hoja.
+- Se redibujan las seis láminas: volumen y nerviación de órganos; anteras bilobuladas, cavidad ovárica y óvulos en sección; empalizada compacta y tejido esponjoso conectado con lagunas; vasos con paredes y lúmenes; capas de endodermis y periciclo diferenciadas.
+- Se actualizan los puntos de identificación para los nuevos dibujos.
+- El progreso usa seis actividades y descarta las retiradas al cargar datos anteriores.
+
+La aplicación pública se encuentra en [GitHub Pages](https://javierbuezo.github.io/Taxonomy/).

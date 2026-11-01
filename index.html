@@ -2,10 +2,10 @@
 <html lang="es" data-theme="dark">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#14221f"><meta name="description" content="Repasa organografía vegetal con ocho actividades visuales: arrastra etiquetas a plantas, flores y tejidos. Con descripciones, corrección y progreso local.">
+<meta name="theme-color" content="#14221f"><meta name="description" content="Repasa organografía vegetal con seis actividades visuales: arrastra etiquetas a plantas, flores y tejidos. Con descripciones, corrección y progreso local.">
 <title>Taxonomy · Aula botánica</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2314221f'/%3E%3Cpath d='M16 48C12 20 34 12 50 12C54 40 32 50 16 48M17 47L43 21' fill='%23b8cda0' stroke='%238eaa78' stroke-width='3'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="./style.css?v=1.1.0">
 </head>
 <body>
 <a class="skip" href="#workspace">Saltar a la actividad</a>
@@ -18,7 +18,7 @@
 <aside class="sidebar" aria-label="Actividades de repaso">
 <div class="sidebar-intro"><span class="eyebrow">CUADERNO DE PRÁCTICAS</span><h1>La botánica,<br>pieza a pieza.</h1><p>Un poco de práctica.<br>Una mirada más atenta.</p></div>
 <nav id="activities" aria-label="Elegir actividad"></nav>
-<div class="overall"><div><span>Tu recorrido</span><strong id="overall-count">0 / 8</strong></div><progress id="overall-progress" value="0" max="8" aria-label="Actividades completadas"></progress><p id="overall-note">El progreso se guarda en este navegador.</p></div>
+<div class="overall"><div><span>Tu recorrido</span><strong id="overall-count">0 / 6</strong></div><progress id="overall-progress" value="0" max="6" aria-label="Actividades completadas"></progress><p id="overall-note">El progreso se guarda en este navegador.</p></div>
 <button id="sources" class="source-button">Sobre los esquemas y las fuentes ↗</button>
 </aside>
 <main id="workspace" tabindex="-1">
@@ -45,5 +45,5 @@
 <dialog id="info-dialog"><div class="dialog-heading"><span class="eyebrow">TAXONOMY · AULA BOTÁNICA</span><button id="close-dialog" class="icon-button" aria-label="Cerrar ventana">×</button></div><div id="dialog-body"></div></dialog>
 <div id="drag-ghost" aria-hidden="true" hidden></div>
 <div id="storage-warning" role="status" hidden>No se ha podido guardar el progreso. Puedes seguir practicando durante esta sesión.</div>
-<script type="module" src="./app.js"></script>
+<script type="module" src="./app.js?v=1.1.0"></script>
 </body></html>

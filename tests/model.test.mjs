@@ -22,3 +22,6 @@ test('shuffle preserves labels and does not mutate source',()=>{const source=a.i
 test('all ids and titles are unique',()=>{assert.equal(new Set(activities.map(a=>a.id)).size,activities.length);assert.equal(new Set(activities.map(a=>a.title)).size,activities.length);});
 
 test("editing a completed activity clears completion until rechecked",()=>{let s=solution(emptySession(),a);s=place(s,a,"hoja","tallo");assert.equal(s.completed,false);assert.equal(s.checked,false);assert.equal(grade(s,a).complete,false);});
+
+test('catalog contains only the six requested activities',()=>{assert.deepEqual(activities.map(a=>a.id),['planta','flor','hoja-externa','hoja-tejidos','tallo','raiz']);assert.equal(activities.reduce((n,a)=>n+a.items.length,0),44);});
+test('old seed or stoma progress cannot leave an inaccessible active activity',()=>{for(const active of ['semilla','estoma']){const h=hydrate({version:VERSION,active,sessions:{[active]:{placements:{testa:'testa'},completed:true}}},activities);assert.equal(h.active,'planta');assert.equal(h.sessions[active],undefined);}});
