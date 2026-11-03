@@ -5,9 +5,10 @@
 <meta name="theme-color" content="#14221f"><meta name="description" content="Repasa organografía vegetal con seis actividades visuales: arrastra etiquetas a plantas, flores y tejidos. Con descripciones, corrección y progreso local.">
 <title>Taxonomy · Aula botánica</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2314221f'/%3E%3Cpath d='M16 48C12 20 34 12 50 12C54 40 32 50 16 48M17 47L43 21' fill='%23b8cda0' stroke='%238eaa78' stroke-width='3'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="./style.css?v=1.1.0">
+<link rel="stylesheet" href="./style.css?v=1.1.1">
 </head>
-<body>
+<body data-boot="pending">
+<div id="startup-status" role="alert"><strong id="startup-message">Cargando las actividades…</strong><p>Si la lámina sigue vacía, pulsa «Volver a cargar».</p><button id="reload-app" type="button">Volver a cargar</button><noscript><p>Activa JavaScript en este navegador para utilizar las actividades.</p></noscript></div>
 <a class="skip" href="#workspace">Saltar a la actividad</a>
 <header class="topbar">
 <a class="brand" href="#" aria-label="Taxonomy, inicio"><span class="brand-icon" aria-hidden="true">❧</span><span>Taxonomy<small>AULA BOTÁNICA</small></span></a>
@@ -45,5 +46,16 @@
 <dialog id="info-dialog"><div class="dialog-heading"><span class="eyebrow">TAXONOMY · AULA BOTÁNICA</span><button id="close-dialog" class="icon-button" aria-label="Cerrar ventana">×</button></div><div id="dialog-body"></div></dialog>
 <div id="drag-ghost" aria-hidden="true" hidden></div>
 <div id="storage-warning" role="status" hidden>No se ha podido guardar el progreso. Puedes seguir practicando durante esta sesión.</div>
-<script type="module" src="./app.js?v=1.1.0"></script>
+<script>
+(function(){
+ var box=document.getElementById('startup-status');
+ var message=document.getElementById('startup-message');
+ document.getElementById('reload-app').onclick=function(){window.location.reload();};
+ function failed(){if(document.body.dataset.boot!=='ready'){box.hidden=false;message.textContent='No se han podido cargar las actividades.';}}
+ window.addEventListener('error',failed,true);
+ window.addEventListener('unhandledrejection',failed);
+ window.setTimeout(failed,8000);
+})();
+</script>
+<script defer src="./taxonomy-1.1.1.js"></script>
 </body></html>

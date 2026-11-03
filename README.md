@@ -1,6 +1,6 @@
 # Taxonomy · Aula botánica
 
-Aplicación de repaso visual de organografía vegetal en español. **v1.1**.
+Aplicación de repaso visual de organografía vegetal en español. **v1.1.1**.
 
 [Acceso de revisión docente](https://taxonomy-aula-botanica.squarehedge.chatgpt.site). La copia de Sites tiene acceso privado del propietario; no es un enlace público para el alumnado. El código de este repositorio puede alojarse en cualquier servidor estático, incluido GitHub Pages.
 
@@ -40,7 +40,7 @@ npm run build
 python3 -m http.server 8000 --directory dist
 ```
 
-Abrir `http://localhost:8000`. Los módulos requieren un servidor HTTP; abrir `index.html` con `file://` no es el flujo compatible. No hay recursos externos necesarios para la ejecución. Se puede desplegar la raíz del repositorio o `dist/`; esta última se genera con build.
+Abrir `http://localhost:8000`. El arranque usa un único script clásico sin imports de red; también se puede abrir `index.html` junto a sus archivos locales. No hay recursos externos necesarios para la ejecución. Se puede desplegar la raíz del repositorio o `dist/`; esta última se genera con build.
 
 ## Organización
 
@@ -48,7 +48,7 @@ Abrir `http://localhost:8000`. Los módulos requieren un servidor HTTP; abrir `i
 - `diagrams.js`: seis láminas SVG originales.
 - `model.js`: colocación, intercambio, corrección, ayuda y validación del progreso.
 - `app.js`, `index.html`, `style.css`: interacción y presentación.
-- `tests/model.test.mjs`: 32 pruebas de lógica, catálogo y persistencia.
+- `tests/model.test.mjs`: 42 pruebas de lógica, catálogo y persistencia.
 - `QA.md`: comprobaciones reales y límites de la validación.
 - `.github/workflows/checks.yml`: comprobaciones automáticas al recibir cambios.
 
@@ -66,3 +66,7 @@ Conceptos contrastados con *Biology 2e*, OpenStax: [cuerpo vegetal](https://open
 - El progreso usa seis actividades y descarta las retiradas al cargar datos anteriores.
 
 La aplicación pública se encuentra en [GitHub Pages](https://javierbuezo.github.io/Taxonomy/).
+
+## Reparación de arranque v1.1.1
+
+La captura reportada mostraba la página estática sin menú ni etiquetas. No se reprodujo el fallo en el navegador de comprobación y no se atribuye una causa exacta al navegador del usuario. Se reemplaza la cadena de módulos de red por un único script versionado, generado en build para raíz y dist. Se incorpora un aviso de carga con recuperación, que se oculta solo al completar el render inicial. Las pruebas ejecutan el script publicado con distintos estados guardados y almacenamiento bloqueado.

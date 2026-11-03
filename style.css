@@ -13,3 +13,4 @@
 @media(max-width:720px){.exercise-layout{grid-template-columns:minmax(0,1fr)}.label{min-width:0}}
 @media(max-width:720px){.diagram-stage{min-width:0}.target{font-size:8.5px;line-height:1.1;min-height:34px}.canvas-panel.expanded .diagram-stage{min-width:0}}
 .target{height:8.5%}
+#startup-status{position:fixed;inset:18px 18px auto auto;z-index:100;max-width:390px;padding:18px 22px;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);font-size:13px}#startup-status p{color:var(--muted);font-size:12px;line-height:1.6}#reload-app{padding:9px 14px;border-radius:7px;background:var(--accent);color:var(--accent-text);font-size:12px}
